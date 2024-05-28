@@ -308,6 +308,7 @@ body {
 
   .message {
     max-width: 80%;
+    max-width: 90%;
   }
 
   .input-container {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assistente AI</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-box">
+        <div class="assistant-box">
+          <div class="assistant-input-container">
+            <input
+              type="text"
+              id="assistantIdInput"
+              class="input"
+              placeholder="Assistant ID"
+            />
+            <button onclick="addAssistantId()" class="icon-btn">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <button onclick="toggleAssistantIdList()" class="btn small-btn">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <select id="assistantIdSelect" class="input mt-2">
+            <option value="" disabled selected>Escolha um Assistant ID</option>
+          </select>
+          <ul id="assistantIdList" class="assistant-id-list"></ul>
+        </div>
+        <div class="api-box">
+          <div class="api-input-container">
+            <input
+              type="password"
+              id="apiKeyInput"
+              class="input"
+              placeholder="API Key"
+            />
+            <button onclick="toggleApiKeyVisibility()" class="icon-btn">
+              <i id="apiKeyIcon" class="fas fa-eye"></i>
+            </button>
+            <button onclick="deleteApiKey()" class="icon-btn">
+              <i class="fas fa-times" style="color: red"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-box">
+        <div id="messages" class="messages"></div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="question"
+            class="input question-input"
+            placeholder="Digite sua pergunta aqui..."
+          />
+          <button onclick="handleSubmit()" class="btn question-button">
+            Enviar
+          </button>
+          <button onclick="clearChat()" class="icon-btn">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <button onclick="saveChat()" class="icon-btn">
+            <i class="fas fa-save"></i>
+          </button>
+        </div>
+      </div>
+      <div id="loader" class="loader"></div>
+      <div class="loader-bg"></div>
+    </div>
+
+    <!-- Modal for error messages -->
+    <div id="errorModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Erro</h2>
+        <p id="errorMessage"></p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="src/script.js"></script>
+  </body>
+</html>

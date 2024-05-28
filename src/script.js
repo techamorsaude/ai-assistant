@@ -166,7 +166,7 @@ function checkThreadCompletionInterval(data) {
           disableUI(false);
         }
       });
-  }, 500);
+  }, 1000);
 }
 
 function checkThreadCompletion(data) {
